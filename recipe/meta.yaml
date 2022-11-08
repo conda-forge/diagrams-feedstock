@@ -1,5 +1,5 @@
 {% set name = "diagrams" %}
-{% set version = "0.21.0" %}
+{% set version = "0.23.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 741251174a65e6f4686f96acd37d8f274abcd7aac670526b00ad2891bf39f862
+  sha256: 60bb01cfd193c5d9afa990da692782f590ebe1c0a9788539b2d900d9a3e2fbfc
 
 build:
   number: 0
