@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: b7ada0b119b5189dd021b1dc1467fad3704737452bb18b1e06d05e4d1fa48ed7
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script:
     - $PYTHON -m pip install . -vv
     - cp -r $SRC_DIR/resources $SP_DIR/resources
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - jinja2 >=2.10,<4.0
     - python-graphviz >=0.13.2,<0.21.0
     - typed-ast >=1.5.4,<2.0.0
@@ -39,6 +39,7 @@ test:
     - diagrams.onprem
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
