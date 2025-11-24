@@ -1,5 +1,5 @@
 {% set name = "diagrams" %}
-{% set version = "0.23.4" %}
+{% set version = "0.25.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b7ada0b119b5189dd021b1dc1467fad3704737452bb18b1e06d05e4d1fa48ed7
+  sha256: 87480ba0b2d26987a69f7d553aa0cb1cebf1406adc03fef7031bdfff026bfc51
+  patches:
+    - 0001-chore-move-pre-commit-from-runtime-to-dev-dependenci.patch
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script:
     - $PYTHON -m pip install . -vv
@@ -19,6 +21,7 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
+    - hatchling
   run:
     - python >={{ python_min }}
     - jinja2 >=2.10,<4.0

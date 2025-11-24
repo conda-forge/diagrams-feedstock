@@ -1,0 +1,55 @@
+From 052da89ea7be86a810c94dedcea3d15f9baa91be Mon Sep 17 00:00:00 2001
+From: Copilot <198982749+Copilot@users.noreply.github.com>
+Date: Sun, 23 Nov 2025 19:49:14 +0900
+Subject: [PATCH] chore: move pre-commit from runtime to dev dependencies
+ (#1189)
+
+* Initial plan
+
+* Initial plan for removing pre-commit from main dependencies
+
+Co-authored-by: mingrammer <6178510+mingrammer@users.noreply.github.com>
+
+* Remove pre-commit from main dependencies and clean up test artifacts
+
+Co-authored-by: mingrammer <6178510+mingrammer@users.noreply.github.com>
+
+* Move pre-commit to dev dependencies and revert .gitignore changes
+
+Co-authored-by: mingrammer <6178510+mingrammer@users.noreply.github.com>
+
+* Update poetry.lock to reflect dependency changes
+
+Co-authored-by: mingrammer <6178510+mingrammer@users.noreply.github.com>
+
+---------
+
+Co-authored-by: copilot-swe-agent[bot] <198982749+Copilot@users.noreply.github.com>
+Co-authored-by: mingrammer <6178510+mingrammer@users.noreply.github.com>
+---
+ pyproject.toml |  2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/pyproject.toml b/pyproject.toml
+index d0489a8..664d24a 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -14,7 +14,6 @@ dependencies = [
+     "graphviz>=0.13.2,<0.21.0",
+     "jinja2>=2.10,<4.0",
+     "typed-ast>=1.5.5,<2 ; python_version<'3.8'",
+-    "pre-commit>=4.0.1,<5",
+ ]
+ 
+ [project.scripts]
+@@ -31,6 +30,7 @@ dev = [
+     "rope~=1.13",
+     "isort~=6.0",
+     "black~=24.4",
++    "pre-commit~=4.0",
+ ]
+ 
+ [tool.hatch.build]
+-- 
+2.51.2
+
