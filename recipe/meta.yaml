@@ -8,6 +8,8 @@ package:
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 87480ba0b2d26987a69f7d553aa0cb1cebf1406adc03fef7031bdfff026bfc51
+  patches:
+    - 0001-chore-move-pre-commit-from-runtime-to-dev-dependenci.patch
 
 build:
   number: 0
